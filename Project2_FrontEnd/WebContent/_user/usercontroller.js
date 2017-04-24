@@ -1,5 +1,4 @@
-app.controller('UserController',function($scope,UserService,$location){
-	$scope.message=''
+app.controller('UserController',function($scope,UserService,$location,$rootScope,$cookieStore){
 	$scope.registerUser=function(){
 		UserService.registerUser($scope.user)
 		.then(function(response){
@@ -19,9 +18,13 @@ app.controller('UserController',function($scope,UserService,$location){
 		UserService.login($scope.user)
 		.then(function(response){
 			console.log(response.status)
+			$scope.user=response.data
+			$rootScope.currentUser=response.data;
+			$cookieStore.put("currentUser",response.data);
 			$location.path('/home')
 		},function(response){
 			console.log(response.status)
+			$scope.message=response.data.message
 			$location.path('/login')
 		})
 	}

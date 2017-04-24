@@ -22,13 +22,23 @@ private SessionFactory sessionFactory;
 
 	public User login(User user) {
 		Session session=sessionFactory.openSession();
+		//select * from user_batch15 where username=user.getUsername() and password=user.getPassword()
 		Query query=session.createQuery(
 "from User where username=? and password=?");
-		query.setString(0,user.getUsername());
-		query.setString(1,user.getPassword());
+		//from user where username='john' and password='123'
+		query.setString(0, user.getUsername());
+		query.setString(1, user.getPassword());
 		User validUser=(User)query.uniqueResult();
 		return validUser;
 		
+	}
+
+	public void updateUser(User user) {
+		Session session=sessionFactory.openSession();
+		//update user_batch15 set username=?,password=?,email=?,enabled=?,online=? where id=?
+		session.update(user);
+		session.flush();
+		session.close();
 	}
 
 }
