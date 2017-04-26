@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.dao.UserDao;
-import com.niit.model.User;
 import com.niit.model.Error;
+import com.niit.model.User;
 @RestController
 public class UserController {
 @Autowired
@@ -58,6 +58,7 @@ public ResponseEntity<?> logout(HttpSession session){
 		return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 	}
 	else{
+		user=userDao.getUser(user.getId());
 		user.setOnline(false);
 		userDao.updateUser(user);
 		session.removeAttribute("user");
@@ -65,6 +66,32 @@ public ResponseEntity<?> logout(HttpSession session){
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 }
-
-
+@RequestMapping(value="/getuser",method=RequestMethod.GET)
+public ResponseEntity<?> getUser(HttpSession session){
+	//ONLY FOR AUTHENTICATION
+          User user=(User)session.getAttribute("user");
+          if(user==null){
+        	 Error error=new Error(3,"Unauthorized user..");
+        	 return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
+          }
+          else
+          {
+        	  user=userDao.getUser(user.getId());
+        	  return new ResponseEntity<User>(user,HttpStatus.OK);
+          }
+}
+@RequestMapping(value="/updateuser",method=RequestMethod.PUT)
+public ResponseEntity<?> updateUser(@RequestBody User updatedUserDetails,HttpSession session){
+	User user=(User)session.getAttribute("user");
+	if(user==null){
+		Error error=new Error(3,"Unauthorized user..");
+   	 return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
+	}
+	else{
+		//firstname = John, lastname=Smith
+		userDao.updateUser(updatedUserDetails);
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+}
 }

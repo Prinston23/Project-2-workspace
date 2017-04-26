@@ -41,4 +41,11 @@ private SessionFactory sessionFactory;
 		session.close();
 	}
 
+	public User getUser(int id) {
+		Session session=sessionFactory.openSession();
+		User user=(User)session.get(User.class, id);
+		session.close();
+		return user;
+	}
+
 }

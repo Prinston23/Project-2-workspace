@@ -15,7 +15,10 @@ app.config(function($routeProvider){
 	.when('/profilepic',{
 		templateUrl:'_user/profilepic.html'
 	})
-
+    .when('/edituser',{
+    	templateUrl:'_user/edituserform.html',
+    	controller:'EditController'
+    })
 })
 app.run(function($rootScope,$cookieStore,UserService,$location){
 	console.log('entering run method ')
