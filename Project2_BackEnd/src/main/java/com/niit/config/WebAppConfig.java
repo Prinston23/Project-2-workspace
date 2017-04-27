@@ -28,9 +28,13 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
 	}
-	@Bean
-    public MultipartResolver multipartResolver() {
-        return new CommonsMultipartResolver();
-    }
+
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver getCommonsMultipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(20971520); // 20MB
+		multipartResolver.setMaxInMemorySize(1048576); // 1MB
+		return multipartResolver;
+	}
 
 }

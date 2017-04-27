@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="ISO-8859-1">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +20,7 @@
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">NIIT</a>
+                    <a class="navbar-brand" href="#home">NIIT</a>
                 </div>
 
                 <ul class="nav navbar-nav ">
@@ -30,6 +31,7 @@
                     <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a>
                     <li><a href="#profilepic" ng-show="currentUser.username"><img src="http://localhost:9090/Project2_BackEnd/getimage/{{currentUser.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded"></a></li>
                     <li><a href="#edituser" ng-show="currentUser.username"><span class="glyphicon glyphicon-user"></span>Edit Profile</a></li>
+                    <li><a href="#addJob" ng-show="currentUser.role=='Admin'">Post Job</a></li>
                     <li><a href="" ng-click="logout()" ng-show="currentUser.username">logout</a></li>
                     
                 </ul>
@@ -59,4 +61,6 @@
 <script type="text/javascript" src="_user/usercontroller.js"></script>
 <script type="text/javascript" src="_user/userservice.js"></script>
 <script type="text/javascript" src="_user/editcontroller.js"></script>
+<script type="text/javascript" src="_job/jobcontroller.js"></script>
+<script type="text/javascript" src="_job/jobservice.js"></script>
 </html>
