@@ -24,7 +24,7 @@ app.config(function($routeProvider){
     	controller:'JobController'
     })
     .when('/getAllJobs',{
-    	templateUrl:'_job/getjobtitles.html',
+    	templateUrl:'_job/jobtitles.html',
     	controller:'JobController'
     })
 })
