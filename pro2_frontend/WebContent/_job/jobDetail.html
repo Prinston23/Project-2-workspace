@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="app">
+	<div>
+	
+		<table class="table table-bordered">
+			<tr>
+				<th><b>JOB TITLE</b>:</th>
+				
+				<th><b>JOB ID </b>:</th>
+				
+				<th><b>JOB DESCRIPTION </b>:</th>
+				
+				<th><b>JOB POSTEDON </b>:</th>
+				
+				<th><b>JOB SKILLS REQUIRED </b>:</th>
+				
+				<th><b>JOB SALARY </b>: </th>
+				
+				<th><b>JOB LOCATION </b>:</th>
+			</tr>
+			<tr>
+			
+		<td> {{jobDetail.jobTitle}} </td>
+		
+		<td> {{jobDetail.jobId}}</td>
+		
+		<td> {{jobDetail.jobDescription}}</td>
+		 
+		<td> {{jobDetail.postedOn | date:'yyyy:MM:dd'}} </td>
+		
+	    <td> {{jobDetail.skillsRequired}}</td>> 
+	    
+	    <td>{{jobDetail.salary}} </td> 
+	    
+		<td> {{jobDetail.location}} </td>
+		
+		</tr>
+	</div>
+	
+	<br />
+	<br />
+	
+	<a href="#/getAllJobs">back</a>
+</body>
+</html>

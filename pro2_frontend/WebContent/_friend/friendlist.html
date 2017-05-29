@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Friend List</title>
+</head>
+<body>
+
+	<tr>
+		<th>NAME</th>
+
+
+
+	</tr>
+
+	<tr>
+
+		<td><b ng-repeat="friend in friendslist">
+				<li ng-hide="friend.from==currentUser.username">{{friend.from}}</li>
+				<li ng-hide="friend.to==currentUser.username">{{friend.to}}</li></td>
+
+
+	s</tr>
+</body>
+</html>
