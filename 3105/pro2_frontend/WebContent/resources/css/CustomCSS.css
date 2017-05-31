@@ -1,0 +1,184 @@
+/* For navbar color */
+.navbar-inverse {
+  background-color:#9b0d1c;
+  border-color: #9b0d1c;
+}
+
+/* For carousel image size and alignment */
+.carousel-inner .item > img,
+.carousel-inner .item > a > img
+{
+	height: 300px;
+	margin: auto;
+}
+
+.carousel-indicators li {
+  background-color: #FFE1B2;
+  border-color: #FFA10E;
+}
+
+.carousel-indicators .active{
+    background-color: #FFA10E;
+    border-color: #FFE1B2;
+}
+
+/* For navbar elements */
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+/* For navbar elements hover and focus */
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #FFE1B2;
+  background-color: #FFA10E;
+}
+
+/* for footer styling */
+.footerstyle {
+	color: #FFA10E;
+	background-color: #FFE1B2;
+}
+
+.footernavbar {
+    text-align: center;
+    float: none;
+    display: inline-block;
+}
+
+/* For jumbotron */
+/* .jumbotron {
+  color: #FFA10E;
+  background-color: #FFE1B2;
+} */
+
+/* for footer icons */
+.footerstyle i {
+	color: #FFA10E;
+}
+
+/* For header navbar */
+.navbar-nav > li > a {
+  color: #FFA10E;
+}
+
+/* For header navbar hover and focus */
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  color: #FFE1B2;
+  background-color: #FFA10E;
+}
+
+/* For header navbar after clicked */
+.topnavbar > li > a:focus:not(:hover) {
+  color: #FFA10E;
+  background-color: #FFFFFF;
+}
+
+/* For modal header */
+.modal-header {
+	color: #FFA10E;
+  	background-color: #FFE1B2;
+}
+
+/* For modal footer */
+.modal-footer {
+  	background-color: #F0F0F0;
+}
+
+/* For dropdown list elements */
+.dropdown-menu > li > a {
+ 	color: #FFA10E;
+  	background-color: #FFE1B2;
+}
+
+/* For dropdown list elements hover and focus */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #FFE1B2;
+  background-color: #FFA10E;
+}
+
+/* for dropdown */
+.dropdown-menu {
+  	background-color: #FFE1B2;	
+}
+
+/* For dropdown toggle background color*/
+.open .dropdown-toggle {
+	background-color: #FFA10E !important;
+	color: #FFE1B2 !important;
+}
+
+/* For mobile version start */
+.navbar-toggle {
+  background-color: #FFE1B2;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #FFA10E;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+	border-color: #FFE1B2;
+    background-color: #FFA10E;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #FE612F;
+}
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #FFA10E;
+        background-color: #FFE1B2;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #FFE1B2;
+        background-color: #FFA10E;
+    }
+}
+/* For mobile version ends */
+
+/*for chating*/
+.info .danger {
+  color: #a94442;
+  font-weight: 600;
+}
+
+/* for find a friend panel */
+.panel-warning > .panel-heading {
+  color: #FFE1B2;
+  background-color: #FFA10E;
+  border-color: #FFE1B2;
+}
+
+/* .dropdown:not(.open) > .dropdown-toggle:focus:not(:hover) {
+  background-color: green !important;
+}
+
+ */
+ /* .dropdown:not(.open) > .dropdown-toggle:focus:not(:hover) {
+  background-color: #D80000;
+} */
+
+/* To center footer navbar */
+/* .centernav {
+	text-align: center;
+	display:inline-block;
+    float: none;
+} */
+
+/* for find a friend panel */
+.img-responsive {
+	height: 150px;
+	width: 150px;
+    margin: 0 auto;
+    display: block;
+  	max-width: 100%;
+}
+
+.panel-warning > .panel-footer {
+  color: #FFA10E;
+  background-color: #FFE1B2;
+  border-color: #FFE1B2;
+}
